@@ -50,15 +50,17 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun TopAppBarPreview() {
     MyFirstAppTheme {
-        Row {
-            Button(onClick = {}, shape = RectangleShape) {
-                Text(text = "Search")
-            }
-            Button(onClick = {}, shape = RectangleShape) {
-                Text(text = "Connections")
-            }
-            Button(onClick = {}, shape = RectangleShape) {
-                Text(text = "Settings")
+        Box {
+            Row {
+                Button(onClick = {}, shape = RectangleShape) {
+                    Text(text = "Search")
+                }
+                Button(onClick = {}, shape = RectangleShape) {
+                    Text(text = "Connections")
+                }
+                Button(onClick = {}, shape = RectangleShape) {
+                    Text(text = "Settings")
+                }
             }
         }
     }
