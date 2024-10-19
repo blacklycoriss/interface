@@ -13,6 +13,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -50,13 +51,13 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 fun TopAppBarPreview() {
     MyFirstAppTheme {
         Row {
-            Button(onClick = {}) {
+            Button(onClick = {}, shape = RectangleShape) {
                 Text(text = "Search")
             }
-            Button(onClick = {}) {
+            Button(onClick = {}, shape = RectangleShape) {
                 Text(text = "Connections")
             }
-            Button(onClick = {}) {
+            Button(onClick = {}, shape = RectangleShape) {
                 Text(text = "Settings")
             }
         }
