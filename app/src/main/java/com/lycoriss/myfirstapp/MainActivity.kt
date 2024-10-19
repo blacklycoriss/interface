@@ -11,6 +11,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
@@ -27,30 +28,16 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MyFirstAppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                TopAppBar()
             }
         }
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun TopAppBarPreview() {
+fun TopAppBar() {
     MyFirstAppTheme {
-        Box {
+        Box(contentAlignment = Alignment.TopCenter, modifier = Modifier.fillMaxWidth()) {
             Row {
                 Button(onClick = {}, shape = RectangleShape) {
                     Text(text = "Search")
@@ -64,6 +51,12 @@ fun TopAppBarPreview() {
             }
         }
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun TopAppBarPreview() {
+    TopAppBar()
 }
 
 private fun RowScope.Button(onClick: () -> Unit) {
