@@ -52,9 +52,9 @@ fun TopAppBar() {
                         contentColor = Color(0xFFFFFFFF),
                         containerColor = Color(0xFF000000)
                     ),
-                    modifier = Modifier.align(Alignment.TopStart)
+                    modifier = Modifier.align(Alignment.TopStart).padding(15.dp)
                 ) {
-                    Text(text = "Search")
+                    Text(text = "Search", fontSize = 25.sp)
                 }
 
                 Button(onClick = {}, shape = RectangleShape,
@@ -62,9 +62,9 @@ fun TopAppBar() {
                             contentColor = Color(0xFFFFFFFF),
                             containerColor = Color(0xFF000000)
                         ),
-                        modifier = Modifier.align(Alignment.TopEnd)
+                        modifier = Modifier.align(Alignment.TopEnd).padding(15.dp)
                 ) {
-                    Text(text = "Help")
+                    Text(text = "Help", fontSize = 25.sp)
                 }
         }
     }
