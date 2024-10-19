@@ -50,19 +50,13 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 fun TopAppBarPreview() {
     MyFirstAppTheme {
         Row {
-            Button(onClick = {
-                //
-            }) {
+            Button(onClick = {}) {
                 Text(text = "Search")
             }
-            Button(onClick = {
-                //
-            }) {
+            Button(onClick = {}) {
                 Text(text = "Connections")
             }
-            Button(onClick = {
-                //
-            }) {
+            Button(onClick = {}) {
                 Text(text = "Settings")
             }
         }
