@@ -42,17 +42,25 @@ fun TopAppBar() {
                 .fillMaxWidth()
                 .background(Color.Black)
             ) {
-            Row {
-                Button(onClick = {}, shape = RectangleShape) {
+                Button(onClick = {}, shape = RectangleShape,
+                    colors = ButtonDefaults.buttonColors(
+                        contentColor = Color(0xFFFFFFFF),
+                        containerColor = Color(0xFF000000)
+                    ),
+                    modifier = Modifier.align(Alignment.TopStart)
+                ) {
                     Text(text = "Search")
                 }
-                Button(onClick = {}, shape = RectangleShape) {
-                    Text(text = "Connections")
+
+                Button(onClick = {}, shape = RectangleShape,
+                        colors = ButtonDefaults.buttonColors(
+                            contentColor = Color(0xFFFFFFFF),
+                            containerColor = Color(0xFF000000)
+                        ),
+                        modifier = Modifier.align(Alignment.TopEnd)
+                ) {
+                    Text(text = "Help")
                 }
-                Button(onClick = {}, shape = RectangleShape) {
-                    Text(text = "Settings")
-                }
-            }
         }
     }
 }
