@@ -49,6 +49,26 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun TopAppBarPreview() {
     MyFirstAppTheme {
-        //
+        Row {
+            Button(onClick = {
+                //
+            }) {
+                //
+            }
+            Button(onClick = {
+                //
+            }) {
+                //
+            }
+            Button(onClick = {
+                //
+            }) {
+                //
+            }
+        }
     }
+}
+
+private fun RowScope.Button(onClick: () -> Unit) {
+
 }
