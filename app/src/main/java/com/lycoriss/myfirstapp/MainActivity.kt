@@ -37,7 +37,11 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun TopAppBar() {
     MyFirstAppTheme {
-        Box(contentAlignment = Alignment.TopCenter, modifier = Modifier.fillMaxWidth()) {
+        Box(contentAlignment = Alignment.TopCenter,
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(Color.Black)
+            ) {
             Row {
                 Button(onClick = {}, shape = RectangleShape) {
                     Text(text = "Search")
