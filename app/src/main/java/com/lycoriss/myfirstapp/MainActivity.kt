@@ -53,17 +53,17 @@ fun TopAppBarPreview() {
             Button(onClick = {
                 //
             }) {
-                //
+                Text(text = "Search")
             }
             Button(onClick = {
                 //
             }) {
-                //
+                Text(text = "Connections")
             }
             Button(onClick = {
                 //
             }) {
-                //
+                Text(text = "Settings")
             }
         }
     }
