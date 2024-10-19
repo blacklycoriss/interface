@@ -49,16 +49,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     MyFirstAppTheme {
-        Box {
-            Image(
-                painter = painterResource(R.drawable.ic_launcher_background),
-                contentDescription = "Image in Row",
-                modifier = Modifier.size(45.dp)
-            )
-            Icon(
-                Icons.Filled.Check,
-                contentDescription = "Check mark"
-            )
-        }
+        //
     }
 }
