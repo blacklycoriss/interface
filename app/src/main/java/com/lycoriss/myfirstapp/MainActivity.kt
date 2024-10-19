@@ -1,12 +1,14 @@
 package com.lycoriss.myfirstapp
 
 import android.os.Bundle
+import android.view.RoundedCorner
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material3.*
@@ -28,7 +30,10 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MyFirstAppTheme {
-                TopAppBar()
+                Box() {
+                    MainWindow()
+                    TopAppBar()
+                }
             }
         }
     }
@@ -39,8 +44,8 @@ fun TopAppBar() {
     MyFirstAppTheme {
         Box(contentAlignment = Alignment.TopCenter,
             modifier = Modifier
-                .fillMaxWidth()
-                .background(Color.Black)
+                                .fillMaxWidth()
+                                .background(Color.Black)
             ) {
                 Button(onClick = {}, shape = RectangleShape,
                     colors = ButtonDefaults.buttonColors(
@@ -69,6 +74,39 @@ fun TopAppBar() {
 @Composable
 fun TopAppBarPreview() {
     TopAppBar()
+}
+
+@Composable
+fun MainWindow() {
+    MyFirstAppTheme {
+        Box(contentAlignment = Alignment.Center,
+            modifier = Modifier
+                                .fillMaxSize()
+                                .background(Color.LightGray)
+
+        ) {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Bottom
+            ) {
+                Text(text = "Add Note", fontSize = 25.sp)
+                Button(onClick = {}, shape = RoundedCornerShape(40.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        contentColor = Color(0xFFFFFFFF),
+                        containerColor = Color(0xFF000000)
+                    )
+                ) {
+                    Text(text = "+", fontSize = 20.sp, modifier = Modifier.padding(0.dp))
+                }
+            }
+        }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun MainWindowPreview() {
+    MainWindow()
 }
 
 private fun RowScope.Button(onClick: () -> Unit) {
