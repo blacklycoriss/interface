@@ -77,6 +77,32 @@ fun TopAppBarPreview() {
 }
 
 @Composable
+fun MainWindowElements(modifier: Modifier = Modifier) {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Bottom
+    ) {
+        Text(text = "You don't have", fontSize = 30.sp)
+        Text(text = "any notes yet", fontSize = 25.sp)
+    }
+    Button(onClick = {}, shape = RoundedCornerShape(40.dp),
+        colors = ButtonDefaults.buttonColors(
+            contentColor = Color(0xFFFFFFFF),
+            containerColor = Color(0xFF000000)
+        ),
+        modifier = modifier
+    ) {
+        Text(text = "+", fontSize = 40.sp, modifier = Modifier.padding(0.dp))
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun MainWindowElementsPreview() {
+    MainWindowElements()
+}
+
+@Composable
 fun MainWindow() {
     MyFirstAppTheme {
         Box(contentAlignment = Alignment.Center,
@@ -85,22 +111,9 @@ fun MainWindow() {
                                 .background(Color.LightGray)
                                 .padding(15.dp)
         ) {
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Bottom
-            ) {
-                Text(text = "You don't have", fontSize = 30.sp)
-                Text(text = "any notes yet", fontSize = 25.sp)
-            }
-                Button(onClick = {}, shape = RoundedCornerShape(40.dp),
-                    colors = ButtonDefaults.buttonColors(
-                        contentColor = Color(0xFFFFFFFF),
-                        containerColor = Color(0xFF000000)
-                    ),
-                    modifier = Modifier.align(Alignment.BottomEnd)
-                ) {
-                    Text(text = "+", fontSize = 40.sp, modifier = Modifier.padding(0.dp))
-                }
+            MainWindowElements(modifier = Modifier
+                                .align(Alignment.BottomEnd)
+            )
         }
     }
 }
