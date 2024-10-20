@@ -48,9 +48,9 @@ class NoteActivity : ComponentActivity() {
                             textStyle = TextStyle(fontSize=25.sp),
                             onValueChange = {newText -> message.value = newText},
                             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
-                            placeholder = { Text("Enter your note here") },
+                            placeholder = { Text("Enter your note here", color = Color.White) },
                             colors = TextFieldDefaults.colors(
-                                unfocusedContainerColor = Color.Gray,
+                                unfocusedContainerColor = Color.DarkGray,
                                 unfocusedTextColor = Color.White,
                                 focusedContainerColor = Color.LightGray,
                                 focusedTextColor = Color.Black,
