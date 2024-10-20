@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -37,8 +38,27 @@ class NoteActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+            val message = remember{mutableStateOf("")}
             MyFirstAppTheme {
-
+                Column {
+                    TopAppBarNote()
+                    Box {
+                        NoteWindow()
+                        TextField(value = message.value,
+                            textStyle = TextStyle(fontSize=25.sp),
+                            onValueChange = {newText -> message.value = newText},
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
+                            placeholder = { Text("Enter your note here") },
+                            colors = TextFieldDefaults.colors(
+                                unfocusedContainerColor = Color.Gray,
+                                unfocusedTextColor = Color.White,
+                                focusedContainerColor = Color.LightGray,
+                                focusedTextColor = Color.Black,
+                            ),
+                            modifier = Modifier.fillMaxWidth()
+                        )
+                    }
+                }
             }
         }
     }
@@ -70,21 +90,7 @@ fun CreateButton(modifier: Modifier = Modifier) {
     }
 }
 
-@Composable
-fun EditNoteField(value: String, onValueChange: () -> Unit) {
-    TextField(value = value,
-        textStyle = TextStyle(fontSize=25.sp),
-        onValueChange = {onValueChange()},
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
-        placeholder = { Text("Enter your note here") },
-        colors = TextFieldDefaults.colors(
-            unfocusedContainerColor = Color(0xffeeeeee),
-            unfocusedTextColor = Color(0xff888888),
-            focusedContainerColor = Color.White,
-            focusedTextColor = Color(0xff222222),
-        )
-    )
-}
+
 
 @Composable
 fun TopAppBarNote() {
