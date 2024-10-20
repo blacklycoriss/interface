@@ -77,14 +77,7 @@ fun TopAppBarPreview() {
 }
 
 @Composable
-fun MainWindowElements(modifier: Modifier = Modifier) {
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Bottom
-    ) {
-        Text(text = "You don't have", fontSize = 30.sp)
-        Text(text = "any notes yet", fontSize = 25.sp)
-    }
+fun AddNoteButton(modifier: Modifier = Modifier) {
     Button(onClick = {}, shape = RoundedCornerShape(40.dp),
         colors = ButtonDefaults.buttonColors(
             contentColor = Color(0xFFFFFFFF),
@@ -94,6 +87,24 @@ fun MainWindowElements(modifier: Modifier = Modifier) {
     ) {
         Text(text = "+", fontSize = 40.sp, modifier = Modifier.padding(0.dp))
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun AddNoteButtonPreview() {
+    AddNoteButton()
+}
+
+@Composable
+fun MainWindowElements(ButtonModifier: Modifier = Modifier) {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Bottom
+    ) {
+        Text(text = "You don't have", fontSize = 30.sp)
+        Text(text = "any notes yet", fontSize = 25.sp)
+    }
+    AddNoteButton(modifier = ButtonModifier)
 }
 
 @Preview(showBackground = true)
@@ -111,7 +122,7 @@ fun MainWindow() {
                                 .background(Color.LightGray)
                                 .padding(15.dp)
         ) {
-            MainWindowElements(modifier = Modifier
+            MainWindowElements(ButtonModifier = Modifier
                                 .align(Alignment.BottomEnd)
             )
         }
