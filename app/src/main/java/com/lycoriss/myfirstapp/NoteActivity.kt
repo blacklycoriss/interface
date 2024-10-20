@@ -9,14 +9,18 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.lycoriss.myfirstapp.ui.theme.MyFirstAppTheme
 import com.lycoriss.myfirstapp.MainActivity
 
@@ -33,6 +37,19 @@ class NoteActivity : ComponentActivity() {
 }
 
 @Composable
+fun ExitButton(modifier: Modifier = Modifier) {
+    Button(onClick = {}, shape = RectangleShape,
+        colors = ButtonDefaults.buttonColors(
+            contentColor = Color(0xFFFFFFFF),
+            containerColor = Color(0xFF000000)
+        ),
+        modifier = modifier
+    ) {
+        Text(text = "Exit", fontSize = 25.sp)
+    }
+}
+
+@Composable
 fun TopAppBarNote() {
     MyFirstAppTheme {
         Box(contentAlignment = Alignment.TopCenter,
@@ -40,7 +57,10 @@ fun TopAppBarNote() {
                 .fillMaxWidth()
                 .background(Color.Black)
         ) {
-
+            ExitButton(modifier = Modifier
+                                            .align(Alignment.TopStart)
+                                            .padding(15.dp)
+            )
         }
     }
 }
@@ -57,6 +77,12 @@ fun NoteWindow() {
 
         }
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ExitButtonpreview() {
+    ExitButton()
 }
 
 @Preview(showBackground = true)
