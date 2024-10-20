@@ -83,22 +83,24 @@ fun MainWindow() {
             modifier = Modifier
                                 .fillMaxSize()
                                 .background(Color.LightGray)
-
+                                .padding(15.dp)
         ) {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Bottom
             ) {
-                Text(text = "Add Note", fontSize = 25.sp)
+                Text(text = "You don't have", fontSize = 30.sp)
+                Text(text = "any notes yet", fontSize = 25.sp)
+            }
                 Button(onClick = {}, shape = RoundedCornerShape(40.dp),
                     colors = ButtonDefaults.buttonColors(
                         contentColor = Color(0xFFFFFFFF),
                         containerColor = Color(0xFF000000)
-                    )
+                    ),
+                    modifier = Modifier.align(Alignment.BottomEnd)
                 ) {
-                    Text(text = "+", fontSize = 20.sp, modifier = Modifier.padding(0.dp))
+                    Text(text = "+", fontSize = 40.sp, modifier = Modifier.padding(0.dp))
                 }
-            }
         }
     }
 }
