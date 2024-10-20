@@ -50,6 +50,19 @@ fun ExitButton(modifier: Modifier = Modifier) {
 }
 
 @Composable
+fun CreateButton(modifier: Modifier = Modifier) {
+    Button(onClick = {}, shape = RectangleShape,
+        colors = ButtonDefaults.buttonColors(
+            contentColor = Color(0xFFFFFFFF),
+            containerColor = Color(0xFF000000)
+        ),
+        modifier = modifier
+    ) {
+        Text(text = "Create", fontSize = 25.sp)
+    }
+}
+
+@Composable
 fun TopAppBarNote() {
     MyFirstAppTheme {
         Box(contentAlignment = Alignment.TopCenter,
@@ -59,6 +72,10 @@ fun TopAppBarNote() {
         ) {
             ExitButton(modifier = Modifier
                                             .align(Alignment.TopStart)
+                                            .padding(15.dp)
+            )
+            CreateButton(modifier = Modifier
+                                            .align(Alignment.TopEnd)
                                             .padding(15.dp)
             )
         }
@@ -83,6 +100,12 @@ fun NoteWindow() {
 @Composable
 fun ExitButtonPreview() {
     ExitButton()
+}
+
+@Preview(showBackground = true)
+@Composable
+fun CreateButtonPreview() {
+    CreateButton()
 }
 
 @Preview(showBackground = true)
