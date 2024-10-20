@@ -70,12 +70,6 @@ fun TopAppBar() {
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun TopAppBarPreview() {
-    TopAppBar()
-}
-
 @Composable
 fun TextEmptyWindow() {
     Column(
@@ -85,12 +79,6 @@ fun TextEmptyWindow() {
         Text(text = "You don't have", fontSize = 30.sp)
         Text(text = "any notes yet", fontSize = 25.sp)
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun TextEmptyWindowPreview() {
-    TextEmptyWindow()
 }
 
 @Composable
@@ -106,16 +94,10 @@ fun AddNoteButton(modifier: Modifier = Modifier) {
     }
 }
 
-@Preview(showBackground = true)
 @Composable
-fun AddNoteButtonPreview() {
-    AddNoteButton()
-}
-
-@Composable
-fun MainWindowElements(ButtonModifier: Modifier = Modifier) {
+fun MainWindowElements(modifier: Modifier = Modifier) {
     TextEmptyWindow()
-    AddNoteButton(modifier = ButtonModifier)
+    AddNoteButton(modifier = modifier)
 }
 
 @Composable
@@ -127,11 +109,29 @@ fun MainWindow() {
                                 .background(Color.LightGray)
                                 .padding(15.dp)
         ) {
-            MainWindowElements(ButtonModifier = Modifier
+            MainWindowElements(modifier = Modifier
                                 .align(Alignment.BottomEnd)
             )
         }
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun TopAppBarPreview() {
+    TopAppBar()
+}
+
+@Preview(showBackground = true)
+@Composable
+fun TextEmptyWindowPreview() {
+    TextEmptyWindow()
+}
+
+@Preview(showBackground = true)
+@Composable
+fun AddNoteButtonPreview() {
+    AddNoteButton()
 }
 
 @Preview(showBackground = true)
