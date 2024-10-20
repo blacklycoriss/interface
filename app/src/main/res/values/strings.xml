@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">My first app</string>
+    <string name="title_activity_note">NoteActivity</string>
 </resources>
