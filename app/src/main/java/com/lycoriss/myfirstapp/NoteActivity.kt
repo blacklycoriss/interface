@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -31,6 +32,18 @@ class NoteActivity : ComponentActivity() {
     }
 }
 
+@Composable
+fun TopAppBarNote() {
+    MyFirstAppTheme {
+        Box(contentAlignment = Alignment.TopCenter,
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(Color.Black)
+        ) {
+
+        }
+    }
+}
 
 @Composable
 fun NoteWindow() {
@@ -44,6 +57,12 @@ fun NoteWindow() {
 
         }
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun TopAppBarNotePreview() {
+    TopAppBarNote()
 }
 
 @Preview(showBackground = true)
