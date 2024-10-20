@@ -81,7 +81,7 @@ fun NoteWindow() {
 
 @Preview(showBackground = true)
 @Composable
-fun ExitButtonpreview() {
+fun ExitButtonPreview() {
     ExitButton()
 }
 
