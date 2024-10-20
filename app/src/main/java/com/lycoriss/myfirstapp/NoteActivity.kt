@@ -15,6 +15,7 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
@@ -74,7 +75,14 @@ fun EditNoteField(value: String, onValueChange: () -> Unit) {
     TextField(value = value,
         textStyle = TextStyle(fontSize=25.sp),
         onValueChange = {onValueChange()},
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone)
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
+        placeholder = { Text("Enter your note here") },
+        colors = TextFieldDefaults.colors(
+            unfocusedContainerColor = Color(0xffeeeeee),
+            unfocusedTextColor = Color(0xff888888),
+            focusedContainerColor = Color.White,
+            focusedTextColor = Color(0xff222222),
+        )
     )
 }
 
